@@ -1,0 +1,35 @@
+html{ font-family : 
+    helvetica,serif;
+    font-size: 2em;
+}
+html,body{
+    background-color: rgb(65, 120, 172);
+    padding:0;
+    margin:0;
+}
+.wrapper{
+    height:100vh;
+    width:100%;
+    background-size:cover;
+    text-align:center;
+    background-position:center;
+    background-repeat:no-repeat;
+    
+}
+h1{margin:1em;
+    padding: 7em 0 lem 0;
+    color:white;
+}
+.btn-one{
+    color:white;
+    display: inline-block;
+    margin: 1em;
+    text-decoration:none;
+    background-color:#f7941d;
+    font-size:50px;
+    padding: 0.3em 1em;
+    border-radius:5px;
+    opacity:1.0;
+    
+}
+.btn-one:hover{opacity:08;}

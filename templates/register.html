@@ -1,0 +1,109 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<style>
+  body{
+    background-image: url('/static/images/Mantenimiento-Industrial.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mt-4">
+      <div class="card bg-warning shadow-lg">
+        <div class="card-header">
+          <h3>Register Form</h3>
+        </div>
+        <div class="card-body">
+          <form method="post" id="registerform" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="username" class="text-danger"><i class="fa fa-user" aria-hidden="true"></i> Username</label>
+              <input type="text" required
+              class="form-control" name="username" id="username" aria-describedby="usernamehelp" placeholder="kaladin stormblessed">
+              <small id="usernamehelp" class="form-text text-muted">Please fill the username, min. 10 character. No special characters</small>
+            </div>
+           
+            <div class="form-group">
+              <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Email Address</label>
+              <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="kaladin@storm.com">
+              <small id="emailHelp" class="form-text text-muted">Enter a valid email, we will send verification mail to you, only then you can access the web app</small>
+            </div>
+            <div class="form-group">
+              <div class="form-group">
+                <label for="password"><i class="fa fa-lock" aria-hidden="true"></i> Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="password">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cpassword"><i class="fa fa-lock" aria-hidden="true"></i> Confirm password</label>
+              <input type="password" class="form-control" name="cpassword" id="cpassword" aria-describedby="passHelp" placeholder="confirm password">
+              <small id="passhelp" class="form-text text-muted">Password must match</small>
+            </div>
+            <div class="form-group">
+              <label for="rollno"><i class="fa fa-pencil" aria-hidden="true"></i> Roll number</label>
+              <input type="number"
+                class="form-control" name="rollno" id="rollno" aria-describedby="rollhelp" placeholder="your roll no">
+              <small id="rollhelp" class="form-text text-muted">Valid roll number</small>
+            </div>
+            <div class="form-group">
+                <label for="aadharimg"><i class="fa fa-file" aria-hidden="true"></i> Upload Aadhaar Image</label>
+                <input type="file" class="form-control-file" name="aadharimg" id="aadharimg" placeholder="browse" aria-describedby="aadharHelp">
+                <small id="aadharHelp" class="form-text text-muted">Select a Valid image</small>
+              </div>
+            <button class="btn btn-danger">
+              Register
+            </button>
+            <div id="statusout"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script>
+  // $(function () {
+  //   $('#registerform').submit(function(event){
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //     $('button').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...')
+  //     // get form values as variables
+  //     let uname = $('#username').val()
+  //     let email = $('#email').val()
+      
+  //     $.ajax({
+  //       type: "POST",
+  //       url: "/ajax_register",
+  //       data: {
+  //         "username" : uname,
+  //         "email" : email,
+  //         "status" : "just some crap"
+  //       },
+  //       success: function (response) {
+  //         $('button').html(response.status)
+  //       },
+  //       error: function(response){
+  //         $('button').html(response.status)              
+  //       }
+  //     });
+  //   })
+  // });
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+

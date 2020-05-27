@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block css %}{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+                <p class="card-title text-center h4">Recent Notifications</p>
+                {% for notific in notifications %}
+                <div class="card">
+                        <div class="card-body">
+                                <img src="/static/uploads/attachments/{{notific.attachment}}" class="card-img-top">
+                                <hr>
+                            <p class="h4 text-center">{{notific.title}}</p>
+                            <hr>
+                            <p class="">{{notific.description}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

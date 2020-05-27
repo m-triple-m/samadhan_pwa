@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+{% block css %}{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+                <p class="card-title text-center h4">Recent Notifications</p>
+                {% for query in allQueries %}
+                <a href="/querydetail?_id={{query.id}}">
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <img src="/static/uploads/queries/{{query.img_path}}" class="card-img-top">
+                            <hr>
+                            <p class="h4">Block : {{query.block}}</p>
+                            <hr>
+                            <p class="h4">Department : {{query.dept}}</p>
+                            <hr>
+                            <p class="h4">Room No. : {{query.room_no}}</p>
+                            <hr>
+                            <p class="h4">Issue Type : {{query.issue_type}}</p>
+                            <p>{{query.status}}</p>
+                            <select name="status" class="status">
+                                <option value="generated">Generated</option>
+                                <option value="inprogress">In Progress</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                            <div class="row">
+                                <p class="text-sm">submitted by : {{query.user.username}}</p>
+                                <p class="text-sm mr-auto">Roll No.: {{query.user.roll_no}}</p>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    </div></a>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+    <script>
+    
+        $(document).ready(() => {
+            getStatus = (query_id) => {
+                $.get('/getstatus', {id : query_id}, (data) => {
+                    console.log(data);
+                })
+            }
+
+            setStatus = (query_id, status) => {
+                $.get('/setstatus', {id : query_id, status : status}, (data) => {
+                    console.log(data);
+                })
+            }
+        })
+    
+    </script>
+
+{% endblock %}

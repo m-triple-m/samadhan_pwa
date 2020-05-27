@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block css %}{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+                {% if message %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Success!</strong>{{message}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                {% endif %}
+            <div class="card">
+                
+                <div class="card-body">
+                    <p class="card-title text-center h4">Create Notification</p>
+                    <hr>
+                    <form method="POST" enctype="multipart/form-data">
+                            <label class="mt-4">Title</label>
+                            <input class="form-control" name="title">
+        
+                            <label class="mt-2">Description</label>
+                            <textarea class="form-control" name="description" rows="5"></textarea>
+                            
+                            <label class="mt-2">Attachment</label>
+                            <input class="form-control" name="attachment" type="file">
+                            
+                            <label class="mt-2">Category</label>
+                            <input class="form-control" name="category" list="category">
+        
+                            <datalist id="category">
+                                <option value="Placement"></option>
+                                <option value="Events"></option>
+                                <option value="Others"></option>
+                                
+                            </datalist>
+
+                            <button class="btn btn-primary btn-block mt-4">Submit</button>
+                    </form>
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

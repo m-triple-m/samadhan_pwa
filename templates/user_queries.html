@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block css %}{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+                <p class="card-title text-center h4">Recent Notifications</p>
+                {% for query in allQueries %}
+                <a >
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <img src="/static/uploads/queries/{{query.img_path}}" class="card-img-top">
+                            <hr>
+                            <p class="h4">Block : {{query.block}}</p>
+                            <hr>
+                            <p class="h4">Department : {{query.dept}}</p>
+                            <hr>
+                            <p class="h4">Room No. : {{query.room_no}}</p>
+                            <hr>
+                            <p class="h4">Issue Type : {{query.issue_type}}</p>
+                            <p></p>
+                            {% if query.status == 'generated' %}
+                                <button class="btn btn-secondary btn-block">{{query.status}}</button>
+                            {% elif query.status == 'inprogress' %}
+                                <button class="btn btn-warning btn-block">{{query.status}}</button>
+                            {% elif query.status == 'completed' %}
+                                <button class="btn btn-success btn-block">{{query.status}}</button>
+                            {% endif %}
+                            <div class="row">
+                                <p class="text-sm">submitted by : {{query.user.username}}</p>
+                                <p class="text-sm mr-auto">Roll No.: {{query.user.roll_no}}</p>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    </div></a>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+    
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<style>
+     body{
+    background-image: url('/static/images/Mantenimiento-Industrial.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+        <div class="row">
+          <div class="col-md-6 mt-4">
+                {% if message %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Success!</strong>{{message}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                {% endif %}
+            <div class="card bg-warning shadow-lg">
+              <div class="card-header">
+                <h3 class="text-center">Status Checking</h3>
+              </div>
+              <div class="card-body">
+                <form method="post" id="Log In">
+
+                  <div class="form-group">
+                    <label for="block" class="text-danger"><i class="fa fa-user" aria-hidden="true"></i> Block</label>
+                    <input type="text"
+                    class="form-control" name="block" id="block" aria-describedby="blockhelp" placeholder="Block" required>
+                    <small id="blockhelp" class="form-text text-muted">Enter valid block</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="department" class="text-danger"><i class="fa fa-user" aria-hidden="true"></i> Department</label>
+                    <input type="text"
+                    class="form-control" name="department" id="department" aria-describedby="departmenthelp" placeholder="Department">
+                    <small id="departmenthelp" class="form-text text-muted">Please fill the username, min. 10 character. No special characters</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="room" class="text-danger"><i class="fa fa-user" aria-hidden="true"></i> Room No.</label>
+                    <input type="text"
+                    class="form-control" name="room" id="room" aria-describedby="roomhelp" placeholder="Room No.">
+                    <small id="roomhelp" class="form-text text-muted">Please fill the username, min. 10 character. No special characters</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="type" class="text-danger"><i class="fa fa-user" aria-hidden="true"></i> Type</label>
+                    <input type="text"
+                    class="form-control" name="type" list="istype" id="type" aria-describedby="typehelp" placeholder="Issue Type">
+                    
+                    <datalist id="istype">
+                        <option value="Electricity">Electricity Issue</option>
+                        <option value="Water">Water Related</option>
+                        <option value="Furniture">Furniture Related</option>
+                        <option value="Others">Others</option>
+
+                    </datalist>
+                    <small id="usernamehelp" class="form-text text-muted">Please fill the username, min. 10 character. No special characters</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="username" class="text-danger"><i class="fa fa-user" aria-hidden="true"></i> Upload Image</label>
+                    <input type="file"
+                    class="form-control" name="username" id="username" aria-describedby="usernamehelp" placeholder="kaladin stormblessed">
+                    <small id="usernamehelp" class="form-text text-muted">Please fill the username, min. 10 character. No special characters</small>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="row btn-row">
+                        <div class="col-sm-4 offset-4">
+                            <button class="btn btn-primary" >Submit<i class="fa fa-arrow-right"></i></button>
+                        </div>  
+                    </div>
+                  </div>
+                </form>
+            </div>
+          </div>
+        </div>  
+      </div>
+      
+{% endblock %}
+
+{% block js %}
+<script>
+  
+</script>
+{% endblock %}

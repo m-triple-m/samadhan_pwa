@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<style>
+  
+  .header{
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(1, 9, 15);
+  }
+  .intro-jumbo{
+    background-color: #2328299d;
+  }
+  .btn-row{
+    margin-top: 8rem;
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+  <h1 class="display-3 text-center header">Welcome User</h1>
+  <div class="jumbotron intro-jumbo mt-5">
+    <h1 class=" text-center text-white">SAMADHAAN</h1>
+    <p class="lead text-center text-white">Solution in smart manner</p>
+  </div>
+  <div class="row btn-row">
+    <div class="col-sm-4 offset-4">
+      <a href="/login" class="btn" style="background-color: #676764;color: white;">Continue <i class="fa fa-arrow-right"></i></a>
+    </div>  
+  </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+  
+</script>
+{% endblock %}
+
+
+
+
